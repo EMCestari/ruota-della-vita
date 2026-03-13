@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruota della vita</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Ruota della vita</h1>
+  <p id="last-save">Nessun salvataggio</p>
+</header>
+
+<div class="toolbar">
+  <button class="btn primary" onclick="saveData()">Salva</button>
+  <button class="btn" onclick="exportJSON()">Esporta JSON</button>
+  <label class="btn" style="cursor:pointer">
+    Importa JSON
+    <input type="file" accept=".json" onchange="importJSON(event)" style="display:none">
+  </label>
+  <button class="btn danger" onclick="resetData()">Reset</button>
+</div>
+
+<div class="main">
+  <div class="wheel-panel">
+    <svg id="wheel" viewBox="-130 -130 260 260"></svg>
+    <div class="legend" id="legend"></div>
+    <div class="score-summary">
+      <span>Media complessiva</span>
+      <strong id="avg-score">—</strong>
+    </div>
+  </div>
+  <div class="controls-panel" id="controls"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="main.js"></script>
+</body>
+</html>
